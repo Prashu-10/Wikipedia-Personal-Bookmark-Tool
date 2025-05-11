@@ -1,6 +1,10 @@
 # Wikipedia-Personal-Bookmark-Tool
 web app to search Wikipedia, save articles with AI-generated tags using Gemini Pro (via LangChain), and view or update saved content — all with login, real-time updates, and session-based UI.
 
+
+https://github.com/user-attachments/assets/4914fb5b-3718-4a16-acc8-a7addc54ca95
+
+
 ---
 
 ## ✨ Features
