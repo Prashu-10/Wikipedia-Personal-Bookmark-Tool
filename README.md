@@ -161,22 +161,3 @@ project/
 
 ---
 
-## ✅ Optional Enhancements
-
-- [ ] `/register` endpoint  
-- [ ] Real-time toasts instead of alerts  
-- [ ] Dockerfile for container deployment  
-- [ ] React frontend (Material UI)  
-- [ ] Hosted deployment (e.g. Render / Railway)  
-
----
-
-## 📝 License
-
-MIT License. Use freely and modify.
-
----
-
-## 💬 Author
-
-Developed by **Pranjal Bharti** as a backend-focused assignment using FastAPI, LangChain, and modern software engineering principles.
