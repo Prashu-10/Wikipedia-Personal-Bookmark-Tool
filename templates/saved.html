@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Saved Articles</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h2>Your Saved Articles</h2>
+
+    {% for article in articles %}
+    <div class="article-box">
+      <h3>{{ article.title }}</h3>
+      <p>{{ article.summary }}</p>
+      <a href="{{ article.url }}" target="_blank">View Full Article</a>
+      <form method="post" action="/update-tags">
+        <input type="hidden" name="article_id" value="{{ article.id }}">
+        <label>Tags:</label><br>
+        <textarea name="tags" rows="2" style="width: 100%;">{{ article.tags }}</textarea><br>
+        <button type="submit">Update Tags</button>
+      </form>
+    </div>
+    {% endfor %}
+  </div>
+
+  <script>
+    const ws = new WebSocket("ws://localhost:8070/ws/updates");
+    ws.onmessage = function(event) {
+      alert(event.data);
+    };
+  </script>
+
+</body>
+</html>

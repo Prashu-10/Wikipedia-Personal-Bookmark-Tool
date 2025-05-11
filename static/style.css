@@ -1,0 +1,26 @@
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-section {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .article-box {
+    border: 1px solid #ccc;
+    padding: 16px;
+    margin-top: 20px;
+    border-radius: 6px;
+    background: #f9f9f9;
+  }
+  
+  .save-form button {
+    margin-top: 10px;
+  }
+  

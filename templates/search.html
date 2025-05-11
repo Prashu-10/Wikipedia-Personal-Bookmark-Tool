@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Search Wikipedia</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h2>Search Wikipedia</h2>
+
+    <form method="post" action="/search" class="form-section">
+      <input type="text" name="keyword" placeholder="Enter search keyword" required>
+      <button type="submit">Search</button>
+    </form>
+
+    {% if article %}
+    <div class="article-box">
+      <h3>{{ article.title }}</h3>
+      <p>{{ article.summary }}</p>
+      <a href="{{ article.url }}" target="_blank">View Full Article</a>
+
+      <form method="post" action="/save" class="save-form">
+        <input type="hidden" name="title" value="{{ article.title }}">
+        <input type="hidden" name="summary" value="{{ article.summary }}">
+        <input type="hidden" name="url" value="{{ article.url }}">
+        <button type="submit">Save Article</button>
+      </form>
+    </div>
+    {% endif %}
+  </div>
+
+  <script>
+    const ws = new WebSocket("ws://localhost:8070/ws/updates");
+    ws.onmessage = function(event) {
+      alert(event.data);
+    };
+  </script>
+
+</body>
+</html>
